@@ -12,7 +12,7 @@ contract YourContract {
   constructor(address payable _payee) {
     //this is done on deploy
     payer = payable(msg.sender);
-    payee = _payee
+    payee = _payee;
   }
 
     modifier onlyPayer() {
