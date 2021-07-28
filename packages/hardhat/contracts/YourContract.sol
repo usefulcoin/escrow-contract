@@ -6,17 +6,19 @@ import "hardhat/console.sol";
 
 contract YourContract {
 
-  //event SetPurpose(address sender, string purpose);
-
-  string public purpose = "Building Unstoppable Apps";
+  //variables
+  address public giver; //this the person giving funds.
 
   constructor() {
-    // what should we do on deploy?
+    //this is done on deploy
+    giver = msg.sender;
+
   }
 
-  function setPurpose(string memory newPurpose) public {
-      purpose = newPurpose;
-      console.log(msg.sender,"set purpose to",purpose);
-      //emit SetPurpose(msg.sender, purpose);
+      modifier onlyGiver() {
+        require(msg.sender == giver, "you are not the giver");
+
+        _; //required for every modifier function.
+      }
   }
 }
