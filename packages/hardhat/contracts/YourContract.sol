@@ -52,7 +52,7 @@ contract YourContract {
 
   function payPayee() internal {
     require(payer_approved, "payer has not approved.");
-    payee.transer(address(this).balance);
+    payee.transfer(address(this).balance);
   }
 
 }
