@@ -12,7 +12,7 @@ describe("My Dapp", function () {
       const YourContract = await ethers.getContractFactory("YourContract");
       const accounts = await ethers.getSigners();
 
-      myContract = await YourContract.deploy(accounts[1].address, { value: "1" });
+      myContract = await YourContract.deploy(accounts[1].address, { "value" : "1" });
     });
   });
 });
