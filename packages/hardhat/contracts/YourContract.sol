@@ -17,15 +17,24 @@ contract YourContract {
     payee = _payee;
   }
 
-    modifier onlyPayer() {
-      require(msg.sender == payer, "you are not the payer");
+  modifier onlyPayer() {
+    require(msg.sender == payer, "you are not the payer");
 
-      _; //required for every modifier function.
+    _; //required for every modifier function.
+  }
+
+  modifier onlyPayee() {
+    require(msg.sender == payee, "you are not the payee");
+
+    _; //required for every modifier function.
+  }
+
+  function payerApprovedPayout() {
+    public onlyPayer{
+      payer_approved true;
     }
-
-    modifier onlyPayee() {
-      require(msg.sender == payee, "you are not the payee");
-
-      _; //required for every modifier function.
+    public onlyPayer{
+      payee_approved true;
     }
+  }
 }
