@@ -29,12 +29,10 @@ contract YourContract {
     _; //required for every modifier function.
   }
 
-  function payerApprovedPayout() {
-    public onlyPayer{
-      payer_approved true;
-    }
-    public onlyPayer{
-      payee_approved true;
-    }
+  function payerApprovedPayout() public onlyPayer{
+      payer_approved = true;
+  }
+  function payeeApprovedPayout() public onlyPayee{
+      payee_approved = true;
   }
 }
