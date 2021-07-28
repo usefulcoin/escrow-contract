@@ -49,12 +49,12 @@ contract YourContract {
 
   function payPayer() internal {
     require(payee_approved, "payee has not approved.");
-    payer.send(address(this).balance);
+    payer.transfer(address(this).balance);
   }
 
   function payPayee() internal {
     require(payer_approved, "payer has not approved.");
-    payee.send(address(this).balance);
+    payee.transer(address(this).balance);
   }
 
 }
