@@ -39,7 +39,7 @@ contract YourContract {
 
   function payout() public {
     if (msg.sender == payer) {
-
+      payPayer();
     }
 
     if (msg.sender == payee) {
@@ -48,13 +48,13 @@ contract YourContract {
   }
 
   function payPayer() internal {
-    require(payee_approved, "payee has not approved.")
-    payer.send(address(this).balance)
+    require(payee_approved, "payee has not approved.");
+    payer.send(address(this).balance);
   }
 
   function payPayee() internal {
-    require(payer_approved, "payer has not approved.")
-    payee.send(address(this).balance)
+    require(payer_approved, "payer has not approved.");
+    payee.send(address(this).balance);
   }
 
 }
