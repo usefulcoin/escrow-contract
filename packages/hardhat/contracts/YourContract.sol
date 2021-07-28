@@ -6,8 +6,10 @@ import "hardhat/console.sol";
 contract YourContract {
 
   //variables
-  address payable public payer; //this the person giving funds.
-  address payable public payee; //this the person receiving funds.
+  address payable public payer; //this is the person giving funds.
+  address payable public payee; //this is the person receiving funds.
+  address public payer_approved; //the person giving funds gives consent to transfer funds out of the smart contracts.
+  address public payee_approved; //the person receiving funds gives consent to transfer funds out of the smart contracts.
 
   constructor(address payable _payee) {
     //this is done on deploy
