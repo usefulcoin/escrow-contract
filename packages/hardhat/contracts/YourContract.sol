@@ -7,16 +7,17 @@ import "hardhat/console.sol";
 contract YourContract {
 
   //variables
-  address public giver; //this the person giving funds.
+  address payable public payer; //this the person giving funds.
+  address payable public payee; //this the person receiving funds.
 
-  constructor() {
+  constructor(address payable _payee) {
     //this is done on deploy
-    giver = msg.sender;
-
+    payer = payable(msg.sender);
+    payee = _payee
   }
 
-      modifier onlyGiver() {
-        require(msg.sender == giver, "you are not the giver");
+      modifier onlyPayer() {
+        require(msg.sender == payer, "you are not the payer");
 
         _; //required for every modifier function.
       }
