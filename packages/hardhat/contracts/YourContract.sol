@@ -16,10 +16,9 @@ contract YourContract {
     payee = _payee
   }
 
-      modifier onlyPayer() {
-        require(msg.sender == payer, "you are not the payer");
+    modifier onlyPayer() {
+      require(msg.sender == payer, "you are not the payer");
 
-        _; //required for every modifier function.
-      }
-  }
+      _; //required for every modifier function.
+    }
 }
