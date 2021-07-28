@@ -21,7 +21,7 @@ contract YourContract {
       _; //required for every modifier function.
     }
 
-    modifier onlyPayer() {
+    modifier onlyPayee() {
       require(msg.sender == payee, "you are not the payee");
 
       _; //required for every modifier function.
