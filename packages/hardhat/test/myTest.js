@@ -10,7 +10,7 @@ describe("My Dapp", function () {
   describe("YourContract", function () {
     it("Should deploy YourContract", async function () {
       const YourContract = await ethers.getContractFactory("YourContract");
-      const accounts = await ethers.getSigner();
+      const accounts = await ethers.getSigners();
 
       myContract = await YourContract.deploy(accounts[1].address);
     });
