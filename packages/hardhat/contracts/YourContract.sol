@@ -55,6 +55,6 @@ contract YourContract {
     payee.transfer(address(this).balance);
   }
 
-  fallback() external {}
+  fallback() external payable {}
 
 }
