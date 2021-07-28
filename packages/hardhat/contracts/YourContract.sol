@@ -32,7 +32,29 @@ contract YourContract {
   function payerApprovedPayout() public onlyPayer{
       payer_approved = true;
   }
+
   function payeeApprovedPayout() public onlyPayee{
       payee_approved = true;
   }
+
+  function payout() public {
+    if (msg.sender == payer) {
+
+    }
+
+    if (msg.sender == payee) {
+      payPayee();
+    }
+  }
+
+  function payPayer() internal {
+    require(payee_approved, "payee has not approved.")
+    payer.send(address(this).balance)
+  }
+
+  function payPayee() internal {
+    require(payer_approved, "payer has not approved.")
+    payee.send(address(this).balance)
+  }
+
 }
