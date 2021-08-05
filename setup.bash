@@ -16,9 +16,13 @@ sudo apt -y install npm > /dev/null 2>&1 && echo [$0] installed NPM APT.
 sudo apt -y install vim > /dev/null 2>&1 && echo [$0] installed vim APT.
 sudo apt -y install awscli > /dev/null 2>&1 && echo [$0] installed awscli APT.
 
-# step 2: install Yarn.
+# step 2: install Yarn version 12.
 if $debug ; then sudo npm install --global yarn; fi
 sudo npm install --global yarn > /dev/null 2>&1 && echo [$0] installed Yarn.
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.profile
+nvm install 12
+nvm use 12
 
 # step 3: verify the installation of APTs and configure AWS Client.
 nodeversion=$(nodejs --version) && echo [$0] verified the installation of nodejs version $nodeversion.
