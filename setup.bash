@@ -5,7 +5,7 @@
 # script created: 20210802
 # script purpose: spin up node/express for REACT development
 
-# disable/enable debugging.
+# step 0: disable/enable debugging by setting debug to "false" or "true".
 debug="false" && echo [$0] set debug mode to "$debug".
 
 # step 1: update the package list and install Yarn. this also installs Node. install unzip and install NPM last.
@@ -32,10 +32,9 @@ awsversion=$(aws --version) && echo [$0] verified the installation of aws versio
 aws configure
 
 # step 4: yarn up.
-# if $debug ; then sudo yarn && yarn start ; fi
-# sudo yarn install > /dev/null 2>&1 && echo [$0] yarned up.
 #
-# or
+# refer to quickstart instructions here -> https://github.com/austintgriffith/scaffold-eth
+#
 #
 # npm install react-router-dom [if required]
 # npm start [to compile and host locally]
